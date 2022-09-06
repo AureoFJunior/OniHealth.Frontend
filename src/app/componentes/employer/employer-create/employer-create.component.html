@@ -1,0 +1,48 @@
+<app-nav></app-nav>
+<mat-card class="main">
+    <mat-card-title>
+        Novo Funcionário
+    </mat-card-title>
+
+    <!-- Formulário para inserir o funcionário -->
+
+    <form>
+
+        <!-- Campo do nome -->
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="employer.name" name="name" required>
+            <mat-placeholder class="placeholder">Nome</mat-placeholder>
+        </mat-form-field>
+
+        <!-- ARRUMAR PRA SER UMA DROPDOWN   -->
+        <mat-form-field>
+            <input matInput [(ngModel)]="employer.role" name="role" required>
+            <mat-placeholder class="placeholder">Cargo</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="employer.salary" name="salary">
+            <mat-placeholder class="placeholder">Salário (R$)</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="employer.phoneNumber" name="phoneNumber">
+            <mat-placeholder class="placeholder">Telefone</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="employer.email" name="email">
+            <mat-placeholder class="placeholder">Email</mat-placeholder>
+        </mat-form-field>
+
+    </form>
+
+    <!-- Botão de criação do funcionário -->
+
+    <button mat-raised-button (click)="createEmployer()" color="warn"> Salvar </button>
+
+    <!-- Botão para cancelar a operação -->
+
+    <button mat-raised-button (click)="cancel()"> Cancelar </button>
+</mat-card>

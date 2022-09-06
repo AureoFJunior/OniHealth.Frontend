@@ -1,0 +1,44 @@
+<mat-card class="home mat-elevation-z4">
+        <mat-card-title class="title">
+            Cadastro
+        </mat-card-title>
+    
+        <form>
+    
+            <!-- Campo do nome -->
+    
+            <mat-form-field>
+                <input matInput placeholder="Login de Usuário" [(ngModel)]="user.userName" name="userName" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Nome" [(ngModel)]="user.firstName" name="firstName" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Sobrenome" [(ngModel)]="user.lastName" name="lastName" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input type="email" matInput placeholder="Email" [(ngModel)]="user.email" name="email">
+            </mat-form-field>
+            
+           
+    
+            <!-- Campo da senha -->
+    
+            <mat-form-field>
+                <input matInput placeholder="Senha" [(ngModel)]="user.password" name="password" [type]="hide ? 'password' : 'text'" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+            </mat-form-field>
+        </form>
+    
+        <!-- Botão de criação do usuário -->
+        <button mat-raised-button (click)="signup()" color="warn"> Cadastrar </button>
+
+        <!-- Botão pra cancelar -->
+        <button mat-raised-button (click)="cancel()" color=""> Cancelar </button>
+    
+</mat-card>
