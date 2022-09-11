@@ -20,3 +20,13 @@ button {
     opacity: 0.6;
     color: aliceblue;
 }
+
+.mainButton {
+    background-color: darkorchid;
+    color: whitesmoke;
+}
+
+.secondaryButton{
+    background-color: whitesmoke;
+    color: darkorchid;
+}

@@ -28,7 +28,8 @@ export class EmployerReadComponent implements OnInit {
     }
 
     this.employerService.read().subscribe(employers => {
-    this.dataSource = employers.employerDetails
+    this.dataSource = employers
+    console.log(employers)
     this.dataSource.paginator = this.paginator;
     })
   }

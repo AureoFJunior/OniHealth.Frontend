@@ -14,3 +14,13 @@ button {
     padding: 10px;
     background-color: #1b1e1f
 }
+
+.mainButton {
+    background-color: darkorchid;
+    color: whitesmoke;
+}
+
+.secondaryButton{
+    background-color: whitesmoke;
+    color: darkorchid;
+}

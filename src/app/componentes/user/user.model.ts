@@ -5,6 +5,11 @@ export interface User {
     userName: string
     password: string
     email: string
-    birthDate: string
+    birthDate: Date
     isLogged: number
+}
+
+export interface UserDTO extends User {
+    token: string
+    refreshToken: string
 }

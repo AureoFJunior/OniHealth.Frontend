@@ -18,9 +18,27 @@
             </a>
             <a mat-list-item routerLink="/employers"> 
                 <i class="material-icons">
-                    emoji_people
+                    group
                 </i>
                 Funcionários
+            </a>
+            <a mat-list-item routerLink="/customers"> 
+                <i class="material-icons">
+                    diversity_3
+                </i>
+                Clientes
+            </a>
+            <a mat-list-item routerLink="/plans"> 
+                <i class="material-icons">
+                    health_and_safety
+                </i>
+                Planos
+            </a>
+            <a mat-list-item routerLink="/calendar"> 
+                <i class="material-icons">
+                    calendar_month
+                </i>
+                Agenda
             </a>
             <a mat-list-item routerLink="/"> 
                 <i class="material-icons">
@@ -32,6 +50,6 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content">
-        <router-outlet></router-outlet> <!-- Aqui fica as rotas -->
+        <router-outlet></router-outlet> <!-- Aqui ficam as rotas -->
     </mat-sidenav-content>
 </mat-sidenav-container>

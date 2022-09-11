@@ -3,3 +3,13 @@ button {
     margin-right: 195px;
     float: right;
 }
+
+.mainButton {
+    background-color: darkorchid;
+    color: whitesmoke;
+}
+
+.secondaryButton{
+    background-color: whitesmoke;
+    color: darkorchid;
+}

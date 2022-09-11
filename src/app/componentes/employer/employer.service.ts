@@ -35,6 +35,7 @@ export class EmployerService {
     headers = headers.append('Access-Control-Allow-Origin', '*')
     headers = headers.append('Authorization', 'Bearer ' + token)
 
+    console.log(token)
     return this.httpClient.post<Employer>(`${this.baseUrl}/AddEmployer`, employer, { headers: headers }).pipe(
       map((obj) => obj),
       catchError((e) => this.errorhandler(e))

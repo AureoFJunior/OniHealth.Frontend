@@ -31,7 +31,11 @@ td {
 }
 
 .edit .material-icons {
-    color: #e9682c;
+    color: darkorchid;
+}
+
+.delete .material-icons {
+    color: plum;
 }
 
 .paginator {

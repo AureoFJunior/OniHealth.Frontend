@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { User } from './user.model';
+import { User, UserDTO } from './user.model';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, defaultIfEmpty, filter, first, isEmpty, map } from 'rxjs/operators';
 import { StorageService } from 'src/app/services/storage.service';
@@ -31,12 +31,10 @@ export class UserService {
   //Cadastra o usuário
   create(user: User): Observable<User> {
     let headers = new HttpHeaders()
-    const token = this.storageService.getData('token')
 
-    headers = headers.append('Content-Type', 'application/json')
-    headers = headers.append('Access-Control-Allow-Origin', '*')
-    headers = headers.append('Authorization', 'Bearer ' + token)
-
+    console.log(user);
+    console.log(`${this.baseUrl}/AddUser`);
+    
     return this.httpClient.post<User>(`${this.baseUrl}/AddUser`, user, { headers: headers }).pipe(
       map((obj) => obj),
       catchError((e) => this.errorhandler(e))
@@ -83,10 +81,10 @@ export class UserService {
 
   login(user: User): Observable<any> {
     const headers = new HttpHeaders()
-    headers.set('Content-Type', 'application/json')
-    headers.set('Access-Control-Allow-Origin', '*')
 
-    let login = this.httpClient.post<User>(`${this.baseUrl}/LogInto/${user.userName}/${user.password}`, { headers: headers }).pipe(
+
+
+    let login = this.httpClient.get<UserDTO>(`${this.baseUrl}/LogInto/${user.userName}/${user.password}`, { headers: headers }).pipe(
       map((obj) => obj),
       catchError((e) => this.errorhandler(e))
     );

@@ -34,3 +34,13 @@ mat-radio-group {
     margin-right: 9px;
     padding: 1px;
 }
+
+.mainButton {
+    background-color: darkorchid;
+    color: whitesmoke;
+}
+
+.secondaryButton{
+    background-color: whitesmoke;
+    color: darkorchid;
+}

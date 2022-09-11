@@ -30,3 +30,13 @@ button {
 .placeholder {
     color: white;
 }
+
+.mainButton {
+    background-color: darkorchid;
+    color: whitesmoke;
+}
+
+.secondaryButton{
+    background-color: whitesmoke;
+    color: darkorchid;
+}

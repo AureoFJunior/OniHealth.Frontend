@@ -18,7 +18,7 @@ export class SignupScreenComponent implements OnInit {
     userName: '',
     password: '',
     email: '',
-    birthDate: '',
+    birthDate: new Date(),
     isLogged: 0
   }
 

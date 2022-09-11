@@ -12,29 +12,21 @@
     padding-right: 10px;
 }
 
-/*
-.content {
-    padding: 16px;
-    background-color: #31332C;
-}
-
-/*
-.sidenav a {
-    background-color: #d65e48;
-    z-index: -1;
-}
-*/
-
 .a:hover {
-    background-color: #E53D00;
+    color: darkorchid;
     width: 0;
     height: 100%;
     top: 0;
     left: 0;
 }
 
+.sidenav a:hover {
+    color: darkorchid;
+}
+
 .sidenav .logo {
     max-height: 55px;
+    width: 60%;
     align-items: left;
 }
 
