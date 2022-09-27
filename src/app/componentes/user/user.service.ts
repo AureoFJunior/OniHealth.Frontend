@@ -12,7 +12,7 @@ import { StorageService } from 'src/app/services/storage.service';
 export class UserService {
 
   //URL base da aplicação
-  baseUrl: string = 'https://localhost:49153/api/User';
+  baseUrl: string = 'http://localhost:5000/api/User';
   authUser: boolean = false;
   fodase: Observable<User> = new Observable<User>()
 

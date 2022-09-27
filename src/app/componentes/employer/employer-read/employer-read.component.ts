@@ -41,5 +41,10 @@ export class EmployerReadComponent implements OnInit {
     this.router.navigate(['/employers'])
   }
 
+  defineRole(role: number): string {
+    //aqui vamos tratar o Enum e retornar o nome do cargo, fazendo uma busca na tabela.
+    return ''
+  }
+
 
 }

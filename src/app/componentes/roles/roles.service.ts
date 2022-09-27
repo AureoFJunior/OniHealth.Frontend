@@ -4,15 +4,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { StorageService } from 'src/app/services/storage.service';
-import { Employer } from './employer.model';
+import { Roles } from './roles.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EmployerService {
+export class RolesService {
 
   //URL base da aplicação
-  baseUrl: string = 'http://localhost:5000/api/Employer'
+  baseUrl: string = 'http://localhost:5000/api/Roles'
 
   constructor(private snackBar: MatSnackBar, private httpClient: HttpClient, private storageService: StorageService) { }
 
@@ -26,8 +26,8 @@ export class EmployerService {
     })
   }
 
-  //Cadastra o funcionário
-  create(employer: Employer): Observable<Employer> {
+  //Cadastra o cargos
+  create(Roles: Roles): Observable<Roles> {
     let headers = new HttpHeaders()
     const token = this.storageService.getData('token')
 
@@ -35,7 +35,8 @@ export class EmployerService {
     headers = headers.append('Access-Control-Allow-Origin', '*')
     headers = headers.append('Authorization', 'Bearer ' + token)
 
-    return this.httpClient.post<Employer>(`${this.baseUrl}/AddEmployer`, employer, { headers: headers }).pipe(
+    console.log(token)
+    return this.httpClient.post<Roles>(`${this.baseUrl}/AddRoles`, Roles, { headers: headers }).pipe(
       map((obj) => obj),
       catchError((e) => this.errorhandler(e))
     );
@@ -47,7 +48,7 @@ export class EmployerService {
     return EMPTY;
   }
 
-  //Lê os funcionários
+  //Lê os cargos
   read() {
     let headers = new HttpHeaders()
     const token = this.storageService.getData('token')
@@ -56,13 +57,13 @@ export class EmployerService {
     headers = headers.append('Access-Control-Allow-Origin', '*')
     headers = headers.append('Authorization', 'Bearer ' + token)
 
-    return this.httpClient.get<any>(`${this.baseUrl}/GetEmployers`, {headers: headers}).pipe(map((res: any) => {
+    return this.httpClient.get<any>(`${this.baseUrl}/GetRoles`, {headers: headers}).pipe(map((res: any) => {
       return res;
     }))
   }
 
-  //Procura um funcionário com base em um id
-  readById(id: string): Observable<Employer> {
+  //Procura um cargos com base em um id
+  readById(id: string): Observable<Roles> {
     let headers = new HttpHeaders()
     const token = this.storageService.getData('token')
 
@@ -70,12 +71,12 @@ export class EmployerService {
     headers = headers.append('Access-Control-Allow-Origin', '*')
     headers = headers.append('Authorization', 'Bearer ' + token)
 
-    const url = `${this.baseUrl}/GetEmployer/${id}`
-    return this.httpClient.get<Employer>(url, {headers: headers})
+    const url = `${this.baseUrl}/GetRoles/${id}`
+    return this.httpClient.get<Roles>(url, {headers: headers})
   }
 
-  //Atualiza o funcionário
-  update(employer: Employer): Observable<Employer> {
+  //Atualiza o cargos
+  update(Roles: Roles): Observable<Roles> {
     let headers = new HttpHeaders()
     const token = this.storageService.getData('token')
 
@@ -83,12 +84,12 @@ export class EmployerService {
     headers = headers.append('Access-Control-Allow-Origin', '*')
     headers = headers.append('Authorization', 'Bearer ' + token)
 
-    const url = `${this.baseUrl}/UpdateEmployer`
-    return this.httpClient.put<Employer>(url, employer, {headers: headers})
+    const url = `${this.baseUrl}/UpdateRoles`
+    return this.httpClient.put<Roles>(url, Roles, {headers: headers})
   }
 
-  //Deleta o funcionário
-  delete(id: string): Observable<Employer> {
+  //Deleta o cargos
+  delete(id: string): Observable<Roles> {
     let headers = new HttpHeaders()
     const token = this.storageService.getData('token')
 
@@ -96,8 +97,8 @@ export class EmployerService {
     headers = headers.append('Access-Control-Allow-Origin', '*')
     headers = headers.append('Authorization', 'Bearer ' + token)
 
-    const url = `${this.baseUrl}/DeleteEmployer/${id}`
-    return this.httpClient.delete<Employer>(url, {headers: headers})
+    const url = `${this.baseUrl}/DeleteRoles/${id}`
+    return this.httpClient.delete<Roles>(url, {headers: headers})
   }
 
 }

@@ -1,0 +1,27 @@
+<app-nav></app-nav>
+<mat-card class="main">
+    <mat-card-title>
+        Novo Cargo
+    </mat-card-title>
+
+    <!-- Formulário para inserir o cargo -->
+
+    <form>
+
+        <!-- Campo do nome -->
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="roles.name" name="name" required>
+            <mat-placeholder class="placeholder">Nome</mat-placeholder>
+        </mat-form-field>
+
+    </form>
+
+    <!-- Botão de criação do cargo -->
+
+    <button mat-raised-button (click)="createRoles()" class="mainButton"> Salvar </button>
+
+    <!-- Botão para cancelar a operação -->
+
+    <button mat-raised-button (click)="cancel()" class="secondaryButton"> Cancelar </button>
+</mat-card>

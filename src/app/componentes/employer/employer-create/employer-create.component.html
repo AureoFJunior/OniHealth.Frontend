@@ -17,8 +17,12 @@
 
         <!-- ARRUMAR PRA SER UMA DROPDOWN   -->
         <mat-form-field>
-            <input matInput [(ngModel)]="employer.role" name="role" required>
-            <mat-placeholder class="placeholder">Cargo</mat-placeholder>
+            <mat-label class="placeholder">Cargo</mat-label>
+            <mat-select [(ngModel)]="employer.role" required>
+                <mat-option *ngFor="let role of roles" [value]="role.id">
+                  {{role.name}}
+                </mat-option>
+              </mat-select>
         </mat-form-field>
 
         <mat-form-field>

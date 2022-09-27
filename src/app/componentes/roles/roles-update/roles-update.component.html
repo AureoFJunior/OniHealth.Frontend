@@ -1,0 +1,24 @@
+<app-nav></app-nav>
+<mat-card class="main">
+    <mat-card-title>
+        Edição de Cargos
+    </mat-card-title>
+
+    <!-- Formulário para editar o cargo -->
+
+    <form>
+
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="roles.name" name="name" required>
+        </mat-form-field>
+
+    </form>
+
+    <!-- Botão de edição do cargo -->
+
+    <button mat-raised-button (click)="updateRoles()" class="mainButton"> Salvar </button>
+
+    <!-- Botão para cancelar a operação -->
+
+    <button mat-raised-button (click)="cancel()" class="secondaryButton"> Cancelar </button>
+</mat-card>

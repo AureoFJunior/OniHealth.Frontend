@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Roles } from '../../roles/roles.model';
+import { RolesService } from '../../roles/roles.service';
 import { Employer } from '../employer.model';
 import { EmployerService } from '../employer.service';
 
@@ -20,9 +22,14 @@ export class EmployerCreateComponent implements OnInit {
     zipCode: ''
   }
 
-  constructor(private employerService: EmployerService, private router: Router) { }
+  roles: Roles[] = [];
+
+  constructor(private employerService: EmployerService, private rolesService: RolesService, private router: Router) { }
 
   ngOnInit(): void {
+    this.rolesService.read().subscribe(role => {
+    this.roles = role;
+    })
   }
 
   //Função que verifica a criação do funcionário e então chama a função do Service para realmente criar o funcionário no banco de dados.

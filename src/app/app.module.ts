@@ -34,8 +34,16 @@ import { EmployerCrudComponent } from './views/employer-crud/employer-crud.compo
 import { EmployerCreateComponent } from './componentes/employer/employer-create/employer-create.component';
 import { EmployerUpdateComponent } from './componentes/employer/employer-update/employer-update.component';
 import { EmployerReadComponent } from './componentes/employer/employer-read/employer-read.component';
+
+import { RolesCrudComponent } from './views/roles-crud/roles-crud.component'
+import { RolesCreateComponent } from './componentes/roles/roles-create/roles-create.component';
+import { RolesUpdateComponent } from './componentes/roles/roles-update/roles-update.component';
+import { RolesReadComponent } from './componentes/roles/roles-read/roles-read.component';
+
+
 import { UserService } from './componentes/user/user.service';
 import { AuthGuardService } from './services/guard/auth-guard.service';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -47,6 +55,10 @@ import { AuthGuardService } from './services/guard/auth-guard.service';
     EmployerCreateComponent,
     EmployerUpdateComponent,
     EmployerReadComponent,
+    RolesCrudComponent,
+    RolesCreateComponent,
+    RolesUpdateComponent,
+    RolesReadComponent,
     LoginScreenComponent,
     SignupScreenComponent
   ],
@@ -72,6 +84,7 @@ import { AuthGuardService } from './services/guard/auth-guard.service';
     ReactiveFormsModule,
     CommonModule,
     NgImageSliderModule,
+    MatSelectModule,
     NgxMaskModule.forRoot()
   ],
   providers: [UserService, AuthGuardService],
