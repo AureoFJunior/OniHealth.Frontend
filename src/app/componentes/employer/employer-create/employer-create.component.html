@@ -1,4 +1,6 @@
 <app-nav></app-nav>
+<div class="container">
+    <div class="col-12">
 <mat-card class="main">
     <mat-card-title>
         Novo Funcionário
@@ -15,7 +17,7 @@
             <mat-placeholder class="placeholder">Nome</mat-placeholder>
         </mat-form-field>
 
-        <!-- ARRUMAR PRA SER UMA DROPDOWN   -->
+        <!-- Campo do cargo -->
         <mat-form-field>
             <mat-label class="placeholder">Cargo</mat-label>
             <mat-select [(ngModel)]="employer.role" required>
@@ -25,16 +27,21 @@
               </mat-select>
         </mat-form-field>
 
+        <!-- Campo do salário -->
+
         <mat-form-field>
             <input matInput [(ngModel)]="employer.salary" name="salary">
             <mat-placeholder class="placeholder">Salário (R$)</mat-placeholder>
         </mat-form-field>
+
+        <!-- Campo do número de telefone -->
 
         <mat-form-field>
             <input matInput [(ngModel)]="employer.phoneNumber" name="phoneNumber">
             <mat-placeholder class="placeholder">Telefone</mat-placeholder>
         </mat-form-field>
 
+        <!-- Campo do email -->
         <mat-form-field>
             <input matInput [(ngModel)]="employer.email" name="email">
             <mat-placeholder class="placeholder">Email</mat-placeholder>
@@ -50,3 +57,5 @@
 
     <button mat-raised-button (click)="cancel()" class="secondaryButton"> Cancelar </button>
 </mat-card>
+    </div>
+</div>

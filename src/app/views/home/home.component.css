@@ -1,22 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
+
 .home .title {
+    font-family: 'Orbitron', courier, sans-serif;
     font-size: 3rem;
     font-weight: 300;
     line-height: 1.2;
     color: white;
 }
 
+.home .title:hover {
+    text-shadow: 0.04em 0.04em #820aa0e5, 0.08em 0.08em #15b4f3e5, 0.12em 0.12em #820aa0e5
+    , 0.16em 0.16em #15b4f3e5, 0.20em 0.20em #820aa0e5;
+}
+
 .home .subtitle {
     font-size: 1.1rem;
-    
     color: white;
 }
 
 .home {
     width: 75%;
-    text-align: left;
+    text-align: center;
     margin: auto;
     padding: 10px;
     background-color: #1b1e1f;
+    background: url("/assets/zoro-one-piece.gif");
+    background-size: cover;
 }
 
 .home .title .subtitle {
@@ -27,10 +36,16 @@
     background-color: #1b1e1f;
 }
 
-#sales-chart {
-    color: aliceblue;
-}
 
 .mainTitle {
     color: white;
+}
+
+.cppBack {
+    width: 100%;
+    
+}
+
+.spanBack {
+    width: 100%;
 }

@@ -2,6 +2,7 @@
     background-color: #1A1A1A;
     width: 10rem;
     margin-top: -70px;
+    margin-left: -10px;
 }
 
 .sidenav a {
@@ -25,8 +26,8 @@
 }
 
 .sidenav .logo {
-    max-height: 55px;
-    width: 60%;
+    max-height: 100px;
+    width: 80%;
     align-items: left;
 }
 
