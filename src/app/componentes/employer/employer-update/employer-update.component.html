@@ -8,28 +8,41 @@
 
     <form>
 
-        <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="employer.name" name="name" required>
-        </mat-form-field>
+        <!-- Campo do nome -->
 
         <mat-form-field>
-            <input matInput placeholder="Cargo" [(ngModel)]="employer.role" name="role" required>
+            <input matInput [(ngModel)]="employer.name" name="name" required>
+            <mat-placeholder class="placeholder">Nome</mat-placeholder>
         </mat-form-field>
 
+        <!-- Campo do cargo -->
         <mat-form-field>
-            <input matInput placeholder="Salário (R$)" [(ngModel)]="employer.salary" name="salary">
+            <mat-label class="placeholder">Cargo</mat-label>
+            <mat-select [(ngModel)]="employer.role" required>
+                <mat-option *ngFor="let role of roles" [value]="role.id">
+                  {{role.name}}
+                </mat-option>
+              </mat-select>
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Telefone" [(ngModel)]="employer.phoneNumber" name="phoneNumber">
-        </mat-form-field>
+        <!-- Campo do salário -->
 
         <mat-form-field>
-            <input matInput placeholder="Email" [(ngModel)]="employer.email" name="email">
+            <input matInput [(ngModel)]="employer.salary" name="salary">
+            <mat-placeholder class="placeholder">Salário (R$)</mat-placeholder>
         </mat-form-field>
 
+        <!-- Campo do número de telefone -->
+
         <mat-form-field>
-            <input matInput placeholder="CEP" [(ngModel)]="employer.zipCode" name="zipCode">
+            <input matInput [(ngModel)]="employer.phoneNumber" name="phoneNumber">
+            <mat-placeholder class="placeholder">Telefone</mat-placeholder>
+        </mat-form-field>
+
+        <!-- Campo do email -->
+        <mat-form-field>
+            <input matInput [(ngModel)]="employer.email" name="email">
+            <mat-placeholder class="placeholder">Email</mat-placeholder>
         </mat-form-field>
 
     </form>
