@@ -12,7 +12,7 @@ import { Employer } from './employer.model';
 export class EmployerService {
 
   //URL base da aplicação
-  baseUrl: string = 'http://localhost:5000/api/Employer'
+  baseUrl: string = 'http://localhost:8080/api/Employer'
 
   constructor(private snackBar: MatSnackBar, private httpClient: HttpClient, private storageService: StorageService) { }
 
