@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ThemeService } from 'src/app/services/theme/theme.service';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-    constructor(private router: Router, private route: ActivatedRoute) { }
+  backgroundImage: string = '';
 
-    ngOnInit(): void {
+  constructor(private router: Router, private route: ActivatedRoute, private themeService: ThemeService) { }
+
+  ngOnInit(): void {
+    this.themeService.backgroundImage.subscribe(image => this.backgroundImage = image);
   }
+
 }

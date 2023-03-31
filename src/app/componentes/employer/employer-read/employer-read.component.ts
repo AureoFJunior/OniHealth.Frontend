@@ -17,7 +17,7 @@ export class EmployerReadComponent implements OnInit {
   dataSource = new MatTableDataSource<Employer>()
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-  
+
   constructor(private employerService: EmployerService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -45,6 +45,4 @@ export class EmployerReadComponent implements OnInit {
     //aqui vamos tratar o Enum e retornar o nome do cargo, fazendo uma busca na tabela.
     return ''
   }
-
-
 }

@@ -1,0 +1,40 @@
+<app-nav></app-nav>
+<mat-card class="main">
+    <mat-card-title>
+        Edição do Plano
+    </mat-card-title>
+
+    <!-- Formulário para editar o plano -->
+    <form>
+        <mat-form-field>
+          <input matInput [(ngModel)]="plan.name" name="name" required>
+          <mat-placeholder>Nome</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="plan.details" name="details" required>
+          <mat-placeholder>Detalhes</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="plan.totalValue" name="totalValue" required>
+          <mat-placeholder>Valor Total</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select [formControl]="selectIsDependent" [(ngModel)]="plan.hasEmergency" required>
+            <mat-option [value]="true">Sim</mat-option>
+            <mat-option [value]="false">Não</mat-option>
+          </mat-select>
+          <mat-placeholder>Emergência</mat-placeholder>
+        </mat-form-field>
+    </form>
+
+    <!-- Botão de edição do plano -->
+
+    <button mat-raised-button (click)="updatePlan()" class="mainButton"> Salvar </button>
+
+    <!-- Botão para cancelar a operação -->
+
+    <button mat-raised-button (click)="cancel()" class="secondaryButton"> Cancelar </button>
+</mat-card>

@@ -1,44 +1,28 @@
-<mat-card class="home mat-elevation-z4">
-        <mat-card-title class="title">
-            Cadastro
-        </mat-card-title>
-    
-        <form>
-    
-            <!-- Campo do nome -->
-    
-            <mat-form-field>
-                <input matInput placeholder="Login de Usuário" [(ngModel)]="user.userName" name="userName" required>
-            </mat-form-field>
-
-            <mat-form-field>
-                <input matInput placeholder="Nome" [(ngModel)]="user.firstName" name="firstName" required>
-            </mat-form-field>
-
-            <mat-form-field>
-                <input matInput placeholder="Sobrenome" [(ngModel)]="user.lastName" name="lastName" required>
-            </mat-form-field>
-
-            <mat-form-field>
-                <input type="email" matInput placeholder="Email" [(ngModel)]="user.email" name="email">
-            </mat-form-field>
-            
-           
-    
-            <!-- Campo da senha -->
-    
-            <mat-form-field>
-                <input matInput placeholder="Senha" [(ngModel)]="user.password" name="password" [type]="hide ? 'password' : 'text'" required>
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                  </button>
-            </mat-form-field>
-        </form>
-    
-        <!-- Botão de criação do usuário -->
-        <button mat-raised-button (click)="signup()" class="mainButton"> Cadastrar </button>
-
-        <!-- Botão pra cancelar -->
-        <button mat-raised-button (click)="cancel()" class="secondaryButton"> Cancelar </button>
-    
-</mat-card>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <div class="form">
+        <h2 class="form-title">Cadastro</h2>
+        <input type="text" class="form-input" placeholder="Login de Usuário" [(ngModel)]="user.userName" name="userName" required>
+        <input class="form-input" placeholder="Nome" [(ngModel)]="user.firstName" name="firstName" required>
+        <input class="form-input" placeholder="Sobrenome" [(ngModel)]="user.lastName" name="lastName" required>
+        <input type="email" class="form-input" placeholder="Email" [(ngModel)]="user.email" name="email">
+        <input type="password" class="form-input" placeholder="Senha" [(ngModel)]="user.password" name="password" [type]="hide ? 'password' : 'text'" required>
+        <button id="btnHide" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <button class="form-button" id="btnSignUp" (click)="signup()">Cadastrar</button>
+        <button class="form-button" id="btnCancel" (click)="cancel()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

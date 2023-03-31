@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Editar Foto do Perfil</h1>
+<div mat-dialog-content>
+  <p>Selecione uma nova foto de perfil:</p>
+  <input type="file" (change)="onFileSelected($event)">
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="true">Salvar</button>
+</div>

@@ -1,4 +1,6 @@
 <app-nav></app-nav>
+<div class="container">
+  <div class="col-12">
 <mat-card class="main">
     <mat-card-title>
         Novo Cargo
@@ -12,7 +14,7 @@
 
         <mat-form-field>
             <input matInput [(ngModel)]="roles.name" name="name" required>
-            <mat-placeholder class="placeholder">Nome</mat-placeholder>
+            <mat-placeholder>Nome</mat-placeholder>
         </mat-form-field>
 
     </form>
@@ -25,3 +27,5 @@
 
     <button mat-raised-button (click)="cancel()" class="secondaryButton"> Cancelar </button>
 </mat-card>
+  </div>
+</div>

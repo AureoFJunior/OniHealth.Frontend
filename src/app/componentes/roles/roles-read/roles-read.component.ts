@@ -17,7 +17,7 @@ export class RolesReadComponent implements OnInit {
   dataSource = new MatTableDataSource<Roles>()
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-  
+
   constructor(private RolesService: RolesService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {

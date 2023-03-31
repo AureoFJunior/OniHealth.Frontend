@@ -1,0 +1,37 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-with-margin">
+      <mat-card class="main">
+        <mat-card-title>
+          Perfil
+        </mat-card-title>
+        <div class="mini-nav">
+          <div class="profile-picture">
+            <img id="avatar" src="{{ user.profilePicture }}" alt="profile" (click)="openEditAvatarDialog()">
+            <h2>{{ user.userName }}</h2>
+          </div>
+        </div>
+      </mat-card>
+
+    </div>
+    <div class="col-md-6 col-with-margin">
+      <mat-card class="basic">
+        <mat-card-title>
+          Dados Básicos
+        </mat-card-title>
+        <div class="main-context">
+          <p>E-mail: {{ user.email }}</p>
+          <p>Nome: {{ user.firstName }}</p>
+          <p>Sobrenome: {{ user.lastName }}</p>
+          <p>Data de Nascimento: {{ user.birthDate | date: 'dd/MM/yyyy'}}</p>
+          <a routerLink="/user/update/{{ user.id }}" class="edit">
+            <i class="material-icons">
+              edit
+            </i>
+          </a>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

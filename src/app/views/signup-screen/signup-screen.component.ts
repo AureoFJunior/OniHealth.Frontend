@@ -19,7 +19,9 @@ export class SignupScreenComponent implements OnInit {
     password: '',
     email: '',
     birthDate: new Date(),
-    isLogged: 0
+    isLogged: 0,
+    actualTheme: 0,
+    profilePicture: ''
   }
 
   constructor(private userService: UserService, private router: Router) { }
@@ -35,12 +37,12 @@ export class SignupScreenComponent implements OnInit {
     if (this.user.userName !== "") {
       this.userService.create(this.user).subscribe(() => {
         this.userService.showMessage('Cadastro efetuado com sucesso!', 'sucesso')
-        
+
         this.router.navigate(['/']);
       })
   }
   //Não deixa cadastrar se estiver vazio o nome do funcionário.
-  else 
+  else
   {
     this.userService.showMessage('O nome de usuário precisa ser preenchido. Verifique', 'erro')
     this.router.navigate(['/signup'])

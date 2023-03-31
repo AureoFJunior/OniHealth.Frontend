@@ -1,0 +1,47 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="col-12">
+<mat-card class="main">
+    <mat-card-title>
+        Novo Plano
+    </mat-card-title>
+
+    <!-- Formulário para inserir o plano -->
+    <form>
+
+        <!-- Campo do nome -->
+        <mat-form-field>
+            <input matInput [(ngModel)]="plan.name" name="name" required>
+            <mat-placeholder>Nome</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="plan.details" name="details" required>
+          <mat-placeholder>Detalhes</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="plan.totalValue" name="totalValue" required>
+          <mat-placeholder>Valor Total</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select [formControl]="selectIsEmergency" [(ngModel)]="plan.hasEmergency" required>
+            <mat-option [value]="true">Sim</mat-option>
+            <mat-option [value]="false">Não</mat-option>
+          </mat-select>
+          <mat-placeholder>Emergência</mat-placeholder>
+        </mat-form-field>
+
+    </form>
+
+    <!-- Botão de criação do plano -->
+
+    <button mat-raised-button (click)="createPlan()" class="mainButton"> Salvar </button>
+
+    <!-- Botão para cancelar a operação -->
+
+    <button mat-raised-button (click)="cancel()" class="secondaryButton"> Cancelar </button>
+</mat-card>
+  </div>
+</div>

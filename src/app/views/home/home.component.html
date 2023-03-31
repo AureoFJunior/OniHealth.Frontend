@@ -1,25 +1,8 @@
 <app-nav></app-nav>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <mat-card class="home mat-elevation-z3">
-                <mat-card-title class="title">
-                    Oni Health
-                </mat-card-title>
-                <mat-card-subtitle class="subtitle">
-                    Seu melhor amigo para o gerencimaneto de planos de saúde!
-                </mat-card-subtitle>
-            </mat-card>
-    </div>
-    </div>
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-11">
-            <span class="spanBack">
-                <a>
-                    <img src="../assets/cppBack.png" alt="background" class="cppBack">
-                </a>
-            </span>
-    </div>
-    </div>
+<div class="container">
+    <img id="imageBackground" [src]="backgroundImage" alt="background">
+    <p id="title">Oni Health</p>
+    <p id="subtitle">Seu melhor amigo para o gerenciamento de planos de saúde!</p>
+    <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+</div>
 <app-footer></app-footer>

@@ -1,0 +1,17 @@
+button {
+  margin-top: 5vh;
+  margin-right: 6vw;
+  float: right;
+}
+
+.mainButton {
+  background-color: darkorchid;
+  color: whitesmoke;
+}
+
+.secondaryButton{
+  background-color: whitesmoke;
+  color: darkorchid;
+}
+
+/* Arrumar botões para terem um padrão */

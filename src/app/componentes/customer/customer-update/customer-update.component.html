@@ -1,0 +1,67 @@
+<app-nav></app-nav>
+<mat-card class="main">
+    <mat-card-title>
+        Edição de Cliente
+    </mat-card-title>
+
+    <!-- Formulário para editar o Cliente -->
+
+    <form>
+        <!-- Campo do nome -->
+        <mat-form-field>
+            <input matInput [(ngModel)]="customer.name" name="name" required>
+            <mat-placeholder>Nome</mat-placeholder>
+        </mat-form-field>
+
+        <!-- Campo do email -->
+        <mat-form-field>
+          <input matInput [(ngModel)]="customer.email" name="email">
+          <mat-placeholder>Email</mat-placeholder>
+        </mat-form-field>
+
+        <!-- Campo da Data de Nascimento -->
+        <mat-form-field>
+          <input matInput [mask]="'00/00/0000'" #inputBirthDate (change)="updateBirthDate(inputBirthDate.value)" name="birthDate" required>
+          <mat-placeholder>Data de nascimento</mat-placeholder>
+        </mat-form-field>
+
+        <!-- Campo do Assinatura de Planos -->
+        <mat-form-field>
+          <mat-label>Plano Assinado</mat-label>
+          <mat-select [(ngModel)]="customer.signedPlanId" name="signedPlanId" required>
+              <mat-option *ngFor="let signedPlanId of plan" [value]="signedPlanId.id">
+                {{signedPlanId.name}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- Campo de Dependente -->
+        <mat-form-field>
+          <mat-select [formControl]="selectIsDependent" [(ngModel)]="customer.isDependent" required>
+            <mat-option [value]="true">Sim</mat-option>
+            <mat-option [value]="false">Não</mat-option>
+          </mat-select>
+          <mat-placeholder>Dependente</mat-placeholder>
+        </mat-form-field>
+
+        <!-- Campo do número de telefone -->
+        <mat-form-field>
+            <input matInput [mask]="'(00) 00000-0000'" [(ngModel)]="customer.phoneNumber" name="phoneNumber">
+            <mat-placeholder>Telefone</mat-placeholder>
+        </mat-form-field>
+
+        <!-- Campo do Último Pagamento -->
+        <mat-form-field>
+          <input matInput [mask]="'00/00/0000'" #input (change)="updateDate(input.value)" name="lastPaymentDate" required>
+          <mat-placeholder>Último Pagamento</mat-placeholder>
+        </mat-form-field>
+    </form>
+
+    <!-- Botão de edição do Cliente -->
+
+    <button mat-raised-button (click)="updateCustomer()" class="mainButton"> Salvar </button>
+
+    <!-- Botão para cancelar a operação -->
+
+    <button mat-raised-button (click)="cancel()" class="secondaryButton"> Cancelar </button>
+</mat-card>

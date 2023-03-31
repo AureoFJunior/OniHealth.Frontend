@@ -10,8 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/src/styles.css">
 </head>
-<body class="mat-typography col-12">
+<body [ngClass]="{'theme-light': actualTheme === 1, 'theme-dark': actualTheme === 0}" class="mat-typography col-12">
   <app-root></app-root>
   <script src="../node_modules/jquery/dist/jquery.js"></script>  <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>

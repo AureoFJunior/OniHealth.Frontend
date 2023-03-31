@@ -21,7 +21,9 @@ export class LoginScreenComponent implements OnInit {
     password: '',
     email: '',
     birthDate: new Date(),
-    isLogged: 0
+    isLogged: 0,
+    actualTheme: 0,
+    profilePicture: ''
   }
 
   constructor(private userService: UserService, private router: Router, private storageService: StorageService) { }
@@ -48,7 +50,7 @@ export class LoginScreenComponent implements OnInit {
     this.userService.changeStatus(this.user)
 
     this.router.navigate(['/'])
-  }
+    }
   }
 
   signup(): void {

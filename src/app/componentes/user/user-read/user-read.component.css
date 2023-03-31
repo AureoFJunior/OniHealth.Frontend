@@ -1,0 +1,39 @@
+#avatar {
+  width: 6.4rem;
+  height: 6.4rem;
+}
+
+.edit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  display: none;
+}
+
+#avatar:hover{
+  cursor: pointer;
+}
+
+.edit > i {
+  color: #d9cd26;
+  font-size: 1.5rem;
+}
+
+.basic {
+  margin-left: 6rem;
+  padding-bottom: 1.1rem;
+}
+
+.main {
+  width: 90%;
+  text-align: left;
+  padding: 10px;
+  padding-bottom: 0.1em;
+  color: white;
+  margin-left: 10vw;
+}
+
+.edit .material-icons {
+  color: darkorchid;
+}

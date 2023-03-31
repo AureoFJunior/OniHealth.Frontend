@@ -1,35 +1,31 @@
-<div class="container">
-    <mat-card class="home mat-elevation-z4">
-        <mat-card-title class="title">
-            Login
-        </mat-card-title>
-    
-        <form>
-    
-            <!-- Campo do nome -->
-    
-            <mat-form-field>
-                <input matInput placeholder="Nome de Usuário" [(ngModel)]="user.userName" name="userName" required>
-            </mat-form-field>
-    
-            <!-- Campo da senha -->
-    
-            <mat-form-field>
-                <input matInput placeholder="Senha" [(ngModel)]="user.password" name="password" [type]="hide ? 'password' : 'text'" required>
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                  </button>
-            </mat-form-field>
-        </form>
-    
-        
-        <!-- Botão de login -->
-        <button mat-raised-button (click)="login()" class="mainButton"> Entrar </button>
-    
-        <!-- Botão de criação do usuário -->
-        <button mat-raised-button (click)="signup()" class="secondaryButton"> Registre-se </button>
-
-        <a routerLink="/signup" class="forget">Esqueci minha senha</a>
-    
-    </mat-card>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Login-OniHealth</title>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <form class="form">
+        <h2 class="form-title">OniHealth</h2>
+        <input type="text" class="form-input" placeholder="Username" [(ngModel)]="user.userName" name="userName" required>
+        <input type="password" class="form-input" placeholder="Password" [(ngModel)]="user.password" name="password" [type]="hide ? 'password' : 'text'" required>
+        <span class="form-forgot-password"><a href="#">Forgot your password?</a></span>
+        <button id="btnHide" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <button class="form-button" (click)="login()">Sign In</button>
+        <span class="form-span">Not a member? <a class="form-link" (click)="signup()">Sign up now</a></span>
+        <span class="copyright">Copyright ©2023 OniHealth. Designed By: Aureo da Silva F. Junior e Everton Teixeira P. </span>
+      </form>
+    </div>
+    <div class="brand-img">
+      <img src="assets/loginImage.jpeg" alt="loginimage" width="200" height="200">
+    </div>
+  </div>
+</body>
+</html>

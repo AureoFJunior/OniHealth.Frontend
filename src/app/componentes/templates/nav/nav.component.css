@@ -1,40 +1,89 @@
+button.mat-button .icon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 0 auto .5rem;
+  margin-top: 3px;
+  margin-left: 24px;
+}
+
+.task-group-border{
+  margin-top: 5px;
+  padding: 0.5rem;
+  margin-left: 7px;
+  margin-right: 7px;
+  border: 1px solid #fdfdfd;
+  border-radius: 4px;
+  display: flex;
+}
+
+.task-edit-mode{
+  text-transform: uppercase;
+  font-size: .7rem;
+  color: #fdfdfd;
+  font-weight: 600;
+  background-color: #1A1A1A;
+  border: none;
+  cursor: pointer;
+  margin-left: auto; /* Move para a direita */
+  margin-right: auto; /* Move para a esquerda */
+}
+
+.logout-link {
+  top: 10px;
+}
+
 .sidenav {
-    background-color: #1A1A1A;
-    width: 10rem;
-    margin-top: -70px;
-    margin-left: -10px;
+  background-color: #1A1A1A;
+  width: 10rem;
+  margin-top: -70px;
+  margin-left: -10px;
 }
 
 .sidenav a {
-    color: #fdfdfd;
+  color: #fdfdfd;
 }
 
 .sidenav i {
-    padding-right: 10px;
+  padding-right: 10px;
 }
 
 .a:hover {
-    color: darkorchid;
-    width: 0;
-    height: 100%;
-    top: 0;
-    left: 0;
+  color: darkorchid;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .sidenav a:hover {
-    color: darkorchid;
+  color: darkorchid;
 }
 
 .sidenav .logo {
-    max-height: 100px;
-    width: 80%;
-    align-items: left;
+  max-height: 100px;
+  width: 80%;
+  align-items: left;
 }
 
 .sidenav .logo {
-    margin: 15px;
+  margin: 15px;
 }
 
-.container {
-    background-color: #1A1A1A;
+/* Estilos para o tema escuro */
+.theme-dark {
+  background-color: #1A1A1A;
+}
+
+.theme-dark a {
+  color: #fdfdfd;
+}
+
+/* Estilos para o tema claro */
+.theme-light{
+  background-color: #fdfdfd;
+}
+
+.theme-light a {
+  color: #1A1A1A;
 }
